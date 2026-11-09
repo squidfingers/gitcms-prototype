@@ -28,6 +28,7 @@
   "sitemap_url": "https://gitcms-prototype.pages.dev/sitemap.xml",
   "publishing_mode": "editorial_workflow",
   "collections": [
+    "pages",
     "blog"
   ]
 }
