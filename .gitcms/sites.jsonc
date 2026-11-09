@@ -2,9 +2,9 @@
   "version": 1,
   "sites": [
     {
-      "key": "site",
-      "display_name": "Site",
-      "website_url": "https://gitcms-prototype.pages.dev",
+      "key": "gitcms-prototype",
+      "display_name": "gitcms-prototype.pages.dev",
+      "website_url": "https://gitcms-prototype.pages.dev/",
       "root_path": ""
     }
   ]
