@@ -1,0 +1,93 @@
+{
+  "version": "1.2",
+  "media": {
+    "default_library": "repo_media",
+    "libraries": [
+      {
+        "key": "repo_media",
+        "label": "Repository media",
+        "driver": "git",
+        "storage": {
+          "root_path": "static/media"
+        },
+        "references": {
+          "write": {
+            "mode": "root_relative",
+            "base_path": "/media"
+          },
+          "allow_default_library_fallback": true
+        },
+        "limits": {
+          "max_file_size_mb": 10
+        }
+      }
+    ]
+  },
+  "ssg_framework": "hugo",
+  "frontmatter_format": "yaml",
+  "publishing_mode": "direct_publish",
+  "collections": [
+    {
+      "name": "pages",
+      "label": "Pages",
+      "description": "Top-level pages (content/_index.md).",
+      "git_path": "/content/",
+      "file_extension": ".md",
+      "filename_pattern": "{title}",
+      "collection_type": "flat",
+      "frontmatter_schema": [
+        {
+          "name": "title",
+          "type": "title",
+          "label": "Page Title",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "label": "Page Description"
+        },
+        {
+          "name": "params",
+          "type": "json",
+          "label": "Page",
+          "description": "Page header and components."
+        }
+      ]
+    },
+    {
+      "name": "blog",
+      "label": "Blog Posts",
+      "description": "Posts in content/blog. The _index.md entry holds the blog section's settings.",
+      "git_path": "/content/blog/",
+      "file_extension": ".md",
+      "filename_pattern": "{date.isoDate}-{title}",
+      "collection_type": "flat",
+      "frontmatter_schema": [
+        {
+          "name": "title",
+          "type": "title",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "datetime",
+          "label": "Date",
+          "withTime": true
+        },
+        {
+          "name": "draft",
+          "type": "boolean",
+          "label": "Draft",
+          "default": true
+        },
+        {
+          "name": "tags",
+          "type": "multiselect",
+          "label": "Tags"
+        }
+      ]
+    }
+  ]
+}
